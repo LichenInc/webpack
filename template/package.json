@@ -5,6 +5,11 @@
   "author": "{{ author }}",
   "private": true,
   "scripts": {
+    {{#now}}
+    "now-start": "serve ./dist --single",
+    "now-build": "NOW=1 node build/build.js",
+    {{/now}}
+
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js"{{#unit}},
@@ -56,6 +61,9 @@
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.17.3",
     "webpack-bundle-analyzer": "^2.2.1",
+    {{#now}}
+    "serve": "latest",
+    {{/now}}
     {{#unit}}
     "cross-env": "^4.0.0",
     "karma": "^1.4.1",
@@ -99,7 +107,7 @@
     "webpack-merge": "^4.1.0"
   },
   "engines": {
-    "node": ">= 4.0.0",
+    "node": ">= 7.0.0",
     "npm": ">= 3.0.0"
   },
   "browserslist": [
