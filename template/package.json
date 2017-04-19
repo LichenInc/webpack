@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     {{#now}}
-    "now-start": "serve ./dist --single",
+    "now-start": "node build/now-server.js",
     "now-build": "NOW=1 node build/build.js",
     {{/now}}
 
@@ -95,7 +95,7 @@
     "shelljs": "^0.7.6",
     "opn": "^4.0.2",
     "optimize-css-assets-webpack-plugin": "^1.3.0",
-    "ora": "^1.1.0",
+    "ora": "^1.2.0",
     "postcss-cssnext": "^2.9.0",
     "pug": "=2.0.0-beta11",
     "rimraf": "^2.6.0",
