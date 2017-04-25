@@ -4,10 +4,10 @@ var base = ''
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, '../dist/' + base + '/index.html'),
-    assetsRoot: path.resolve(__dirname, '../dist/' + base),
+    index: path.resolve(__dirname, '../', path.join('dist', base, 'index.html')),
+    assetsRoot: path.resolve(__dirname, '../', path.join('dist', base)),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/' + base + '/',
+    assetsPublicPath: path.normalize('/' + base + '/'),
     basePath: base,
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
